@@ -1,0 +1,61 @@
+//colors
+$color_dodger_blue_approx: #169cee;
+
+//urls
+$url_0: url(assets/images/home/devices_mobile.png);
+
+//@extend-elements
+//original selectors
+//.platforms-graphic__bg-layer, .platforms-graphic__icon-overlays, .platforms-graphic__svg-mask
+%extend_base {
+  max-width: none;
+  width: 415px;
+  height: 415px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+  transform: translateX(-50%);
+}
+
+
+.platforms-graphic {
+  position: relative;
+  min-height: 415px;
+  overflow: hidden;
+  margin-bottom: 1.4em;
+}
+.platforms-graphic__bg-layer {
+  @extend %extend_base;
+  background: $url_0 center center no-repeat;
+  background-size: contain;
+}
+.platforms-graphic__icon-overlays {
+  @extend %extend_base;
+  display: none;
+}
+.platforms-graphic__svg-mask {
+  @extend %extend_base;
+  display: none;
+  overflow: hidden;
+}
+.platforms-graphic__svg-mask__mask {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -300px;
+  top: -800px;
+  width: 3000px;
+  height: 3000px;
+  background: $color_dodger_blue_approx;
+  //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+  transform-origin: 0 0;
+  //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+  transform: scale(0);
+  opacity: 0;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+

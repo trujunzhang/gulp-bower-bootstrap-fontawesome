@@ -1,0 +1,248 @@
+// Add custom font
+//@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
+//$font-family-base: 'Raleway', sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300);
+
+$font-family-base: 'Open Sans', sans-serif;
+
+// font-family: 'Open Sans Condensed', sans-serif;
+
+// Import bootstrap and fontawesome
+@import "bootstrap";
+@import "font-awesome";
+
+@import "platforms-graphic";
+@import "platforms-graphic-mobile";
+@import "platforms-graphic-desktop";
+
+// Bootstrap Starter Template Styles
+body {
+  padding-top: 50px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+//colors
+$white: #fff;
+$color_apple_approx: #4a973c;
+$color_mountain_mist_approx: #999;
+$color_celeste_approx: #ccc;
+$color_tapa_approx: #777;
+
+.home .stencil.tile {
+  cursor: default !important;
+  height: 293px;
+  margin: 0 22px 16px 0;
+  width: 296px;
+  z-index: 0;
+  .front {
+    margin-top: 19px;
+    padding-top: 0;
+  }
+  .name {
+    //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    text-shadow: 1px 1px 0 $white;
+    clear: left;
+    display: block !important;
+    font-size: 18px;
+    margin: 0 0 -3px 20px !important;
+    padding: 6px 0 0;
+    a {
+      color: $color_apple_approx;
+      cursor: pointer !important;
+      z-index: 1;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  strong {
+    color: $color_mountain_mist_approx;
+    font-size: 16px;
+  }
+  ul {
+    clear: left;
+    color: $color_celeste_approx;
+    margin: 0 0 0 20px;
+    padding: 6px 0 0;
+    a {
+      color: $color_tapa_approx;
+      &:hover {
+        color: $color_apple_approx;
+      }
+    }
+  }
+  &:hover .front {
+  }
+}
+
+//colors
+$white: #fff;
+$color_celeste_approx: #ccc;
+$color_tapa_approx: #777;
+
+//urls
+$url_0: url(https://www.graffletopia.com/assets/app/grid_simple-5ad8b83a7e72aa1747ee949bf20d7857.png);
+
+//@extend-elements
+//original selectors
+//.stencil.tile .front, .stencil.tile .back
+%extend_thumbnail {
+  height: 256px;
+  padding: 20px;
+  position: absolute;
+  width: 256px;
+}
+
+.stencil {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+  clear: left;
+  height: 130px;
+  .meta {
+    margin-left: 130px;
+    h2 {
+      line-height: 32px;
+      margin-top: 0 !important;
+      margin-bottom: 6px !important;
+    }
+    span {
+      color: $color_tapa_approx;
+    }
+  }
+  &.tile {
+    //Instead of the line below you could use @include perspective($p)
+    perspective: 1300px;
+    clear: none;
+    cursor: pointer;
+    float: left;
+    height: 300px;
+    margin: 0 17px 17px 0;
+    padding: 0;
+    width: 300px;
+    .meta {
+      display: none;
+    }
+    .card {
+      width: 296px;
+      height: 296px;
+      position: relative;
+    }
+    .front {
+      @extend %extend_thumbnail;
+    }
+    .back {
+      @extend %extend_thumbnail;
+      display: none;
+      height: 256px;
+      overflow: hidden;
+      img {
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 0;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        background: inherit;
+        border: none;
+        float: none;
+        margin: -3px 0 0;
+        padding: 0;
+      }
+      p span {
+        color: $color_tapa_approx;
+        margin: 0 9px 0 0;
+        img {
+          margin-right: -2px;
+        }
+        + span {
+          margin: 0;
+          img {
+            margin-right: -1px;
+          }
+        }
+      }
+      span.favorite img {
+        margin-right: -1px;
+      }
+    }
+    .description {
+      font-size: 14px;
+      max-height: 240px;
+      overflow: hidden;
+      strong {
+        display: block !important;
+        margin: -4px 0 0;
+      }
+    }
+    &.skip {
+      margin-right: 0 !important;
+    }
+    &.hover:hover {
+      .back {
+      }
+      .front {
+      }
+    }
+    + .pagination {
+      clear: left;
+      padding-bottom: 20px !important;
+      padding-top: 10px !important;
+    }
+  }
+  img.thumb {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 6px;
+    //Instead of the line below you could use @include user-select($select)
+    user-select: none;
+    background: $white $url_0;
+    border: 1px solid $color_celeste_approx;
+    height: 128px;
+    width: 128px;
+    float: left;
+    margin: 0 12px 0 0;
+  }
+  .front img {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 6px;
+    //Instead of the line below you could use @include user-select($select)
+    user-select: none;
+    background: $white $url_0;
+    border: 1px solid $color_celeste_approx;
+    height: 128px;
+    margin: 0 12px 0 0;
+    width: 128px;
+  }
+  .card .front img {
+    height: auto !important;
+    width: auto !important;
+  }
+}
+
+.small_stencil.skip {
+  margin-right: 0 !important;
+}
+
+//colors
+$color_rose_approx: #ff008a;
+$black_75: rgba(0,0,0,.75);
+$white_21: rgba(255,255,255,.21);
+$color_shalimar_41_approx: rgba(255,255,190,.41);
+$color_sunset_orange_approx: #ff5337;
+$color_razzmatazz_74_approx: rgba(222,0,120,.74);
+$color_pizazz_74_approx: rgba(255,150,0,.74);
+
+.Rounded_Rectangle_3 {
+  width: 92px;
+  height: 66px;
+//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px;
+  background-color: $color_rose_approx;
+//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 1px 1px 3px $black_75, inset 0 33px $white_21, inset 0 0 17px $color_shalimar_41_approx;
+  border: solid 1px $color_sunset_orange_approx;
+  background-image: linear-gradient(to top, $color_razzmatazz_74_approx, $color_pizazz_74_approx);
+}
+
+
