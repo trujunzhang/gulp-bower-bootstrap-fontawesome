@@ -13,6 +13,13 @@ gulp.task('bower', function() { 
          .pipe(gulp.dest(config.bowerDir)) 
 });
 
+gulp.task('assets', function() {
+    return gulp.src([
+            'public/parse/styles/**'
+        ])
+        .pipe(gulp.dest('./public/styles'));
+});
+
 gulp.task('icons', function() { 
                                return gulp.src([
                                    config.bowerDir + '/fontawesome/fonts/**.*',
@@ -59,4 +66,4 @@ gulp.task('css', function() { 
      gulp.watch(config.sassPath + '/**/*.scss', ['css']); 
 });
 
-  gulp.task('default', ['bower', 'icons', 'css', 'javascript', 'animate.css']);
+  gulp.task('default', ['bower', 'icons', 'css', 'javascript', 'animate.css', 'assets']);

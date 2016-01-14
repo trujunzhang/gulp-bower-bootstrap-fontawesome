@@ -1,0 +1,84 @@
+//colors
+$color_dodger_blue_approx: #169cee;
+$color_lochmara_approx: #117dbf;
+
+.home-products__cross-platform {
+  position: relative;
+  overflow: hidden;
+  &:after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+  &:before {
+    content: " ";
+    display: table;
+  }
+}
+.home-products__our-products {
+  padding-bottom: 54px;
+  &:after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+  &:before {
+    content: " ";
+    display: table;
+  }
+}
+.container {
+  position: relative;
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 420px;
+  padding: 0 30px;
+}
+@media(min-width: 760px) {
+  .container {
+    padding: 0 30px;
+    max-width: 900px;
+  }
+}
+@media(min-width: 1104px) {
+  .container {
+    padding: 0 40px;
+    max-width: 1320px;
+  }
+  .home-products__our-products {
+    overflow: hidden;
+    padding-bottom: 117px;
+    .container {
+      height: 674px;
+      .copy-block {
+        max-width: 453px;
+        position: relative;
+        top: 50%;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translateY(-50%);
+        p {
+          margin-left: 0;
+          max-width: 438px;
+        }
+      }
+    }
+  }
+  .home-products__cross-platform {
+    min-height: 1044px;
+    .copy-block {
+      padding-top: 280px;
+      float: right;
+    }
+  }
+  .home-products {
+    text-align: left;
+    padding: 157px 0 0;
+  }
+}
+.home-products {
+  background-image: linear-gradient(to bottom, $color_dodger_blue_approx 0, $color_lochmara_approx 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF169CEE', endColorstr='#FF117DBF', GradientType=0);
+  text-align: center;
+  padding: 46px 0;
+}
