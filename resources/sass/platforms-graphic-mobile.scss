@@ -8,11 +8,7 @@ $url_1: url(assets/images/home/cloudcat.png);
   //@extend-elements
   //original selectors
   //.platforms-graphic__bg-layer, .platforms-graphic__icon-overlays
-  %extend_1 {
-    margin-left: -203px;
-    width: 1600px;
-    height: 1124px;
-  }
+
 
   .platforms-graphic {
     min-height: 1124px;
@@ -21,12 +17,17 @@ $url_1: url(assets/images/home/cloudcat.png);
     margin-bottom: 0;
   }
   .platforms-graphic__bg-layer {
-    @extend %extend_1;
+    margin-left: -203px;
+    width: 1600px;
+    height: 1124px;
     background: $url_0 center center no-repeat;
     background-size: contain;
   }
   .platforms-graphic__icon-overlays {
-    @extend %extend_1;
+    margin-left: -203px;
+    width: 1600px;
+    height: 1124px;
+
     display: block;
     margin-left: -273px;
   }
