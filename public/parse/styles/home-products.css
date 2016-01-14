@@ -28,10 +28,6 @@
 }
 
 @media (min-width: 1104px) {
-    .docs-platforms {
-        margin: 2em auto;
-        max-width: 840px
-    }
 
     .home-products__our-products {
         overflow: hidden;
