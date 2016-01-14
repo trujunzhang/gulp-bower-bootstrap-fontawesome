@@ -4,6 +4,28 @@
     clear: both
 }
 
+.container {
+    position: relative;
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 420px;
+    padding: 0 30px
+}
+
+@media (min-width: 760px) {
+    .container {
+        padding: 0 30px;
+        max-width: 900px
+    }
+}
+
+@media (min-width: 1104px) {
+    .container {
+        padding: 0 40px;
+        max-width: 1320px
+    }
+}
+
 
 .home-products {
     background-image: linear-gradient(to bottom, #169CEE 0, #117DBF 100%);
