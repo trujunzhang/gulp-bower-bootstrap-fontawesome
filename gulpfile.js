@@ -33,7 +33,7 @@ gulp.task('animate.css', function() {
     return gulp.src([
             config.bowerDir + '/animate.css/animate.css'
         ])
-        .pipe(gulp.dest('./public/css'));
+        .pipe(gulp.dest('./public/styles'));
 });
 
 gulp.task('css', function() { 
@@ -51,7 +51,7 @@ gulp.task('css', function() { 
             .on("error", notify.onError(function (error) {
                  return "Error: " + error.message;
              }))) 
-         .pipe(gulp.dest('./public/css')); 
+         .pipe(gulp.dest('./public/styles')); 
 });
 
 // Rerun the task when a file changes

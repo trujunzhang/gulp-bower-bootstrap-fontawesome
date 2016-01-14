@@ -9,7 +9,7 @@ end
 
 namespace :gulp do
   task :cleanup do |t|
-    run "rm -rf public/css && rm -rf public/fonts && rm -rf /public/javascript"
+    run "rm -rf public/styles && rm -rf public/fonts && rm -rf /public/javascript"
   end
 
   task :prepare do |t|
