@@ -51,8 +51,9 @@ crashlytics-build.properties
 bower_components
 
 public/fonts
-public/css
+public/styles
 public/javascript
+
 
 
 website.zip
