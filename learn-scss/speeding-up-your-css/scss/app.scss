@@ -1,0 +1,13 @@
+@import "settings";
+@import "foundation";
+@import "compass/css3";
+@import "buttons";
+
+$primary-color: #ffcc00;
+$element-one: 12px;
+
+header{
+    width: 20px * 5 + 5px;
+}
+
+
