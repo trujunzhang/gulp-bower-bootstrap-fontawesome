@@ -1,13 +1,118 @@
 @import "settings";
 @import "foundation";
-@import "compass/css3";
-@import "buttons";
+@import "colors";
+@import "typography";
+@import "marginpadding";
+@import "compass/css3/transform";
 
-$primary-color: #ffcc00;
-$element-one: 12px;
+body{
+    background-color: $background;
+    font-family: $regular-font;
+}
 
-header{
-    width: 20px * 5 + 5px;
+h1,h2,h3,h4,h5,h6{
+    font-family: $regular-font;
+}
+
+#logo, nav {
+    margin-top: $top-header;
+}
+
+#logo{
+    display: block;
+}
+
+#slogan {
+    font-size: $slogan;
+    color: $dark-blue;
+    margin-bottom: 20px;
+    display:block;
+}
+
+nav {
+    ul {
+        list-style-type: none;
+        float:right;
+    }
+    li{
+        display:inline;
+        float:left;
+        &:last-child a{
+            padding-right: 0;
+        }
+        &:first-child a{
+            padding-left: 0;
+        }
+    }
+
+    a{
+        padding: $top-nav-padding;
+        text-transform: uppercase;
+        color:$dark-blue;
+        font-size: $nav-items;
+    }
+}
+
+
+#content {
+    background: url(../images/hero.jpg);
+    background-size: cover;
+    height: 550px;
+    width: 100%;
+    overfloat:visible;
+
+    .feature {
+        background: $accent;
+        color:#fff;
+        text-transform:uppercase;
+        display:inline-block;
+        padding: 0 5px;
+        font-size:$feature;
+        margin-top: $feature-padding;
+        margin-bottom:0;
+    }
+
+    h1{
+        color:#fff;
+        font-size: $h1;
+        margin-bottom:0;
+    }
+
+    .subtext{
+        color:$light-blue;
+        font-size:$subtext;
+        margin-bottom:70px;
+    }
+}
+
+.gallery{
+    .gcontainer{
+        background:$gallery-background;
+        padding:$gallery-padding;
+        width:230px;
+        margin-bottom: 15px;
+
+        &:hover{
+            @include transform(scale(1.05))
+        }
+    }
+    .gtitle{
+        color: $dark-blue;
+        font-size:$article-titles;
+        line-height: $article-titles-1h;
+        margin: $gallery-margin-inner;
+        display:block;
+    }
+
+    .gsubtext{
+        color:$dark-blue;
+        font-size:$article-subtitles;
+        margin:$gallery-margin-inner;
+    }
+
+    .gsubtext strong{
+        color:$accent;
+    }
 }
 
 
