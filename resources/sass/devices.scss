@@ -1,8 +1,28 @@
 
-
-.home-products{
+.home-products {
   background-color: red;
-  width:auto;
+  display: table;
+  width: 100%;
   height: 600px;
+
   //background-image: url(assets/images/home/devices.png);
+
+  .home-products__cross-platform {
+    display: table-cell;
+    float: none;
+    height: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    vertical-align: middle;
+
+    .right-content {
+      background-color: blue;
+      position: relative;
+      float: right !important;
+      width: 200px;
+      height: 100%;
+    }
+
+  }
 }

@@ -3,7 +3,7 @@
     position: relative;
     min-height: 415px;
     overflow: hidden;
-    margin-bottom: 1.4em
+    margin-bottom: 1.4em;
 }
 
 .platforms-graphic__bg-layer, .platforms-graphic__icon-overlays, .platforms-graphic__svg-mask {
