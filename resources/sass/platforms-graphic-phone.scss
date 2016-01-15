@@ -1,0 +1,161 @@
+
+@media (min-width: 1104px) {
+  .platforms-graphic {
+    min-height: 1124px;
+    width: 100%;
+    position: absolute;
+    margin-bottom: 0
+  }
+
+  .platforms-graphic__bg-layer, .platforms-graphic__icon-overlays {
+    margin-left: -203px;
+    width: 1600px;
+    height: 1124px
+  }
+
+  .platforms-graphic__bg-layer {
+    background: url(assets/images/home/devices.png) center center no-repeat;
+    background-size: contain
+  }
+
+  .platforms-graphic__svg-mask {
+    display: block;
+    width: 1529px;
+    height: 952px;
+    margin-left: -181.5px;
+    margin-top: 24px
+  }
+
+  .platforms-graphic__svg-mask #deviceScreens path {
+    opacity: 0
+  }
+
+  .platforms-graphic__icon-overlays {
+    display: block;
+    margin-left: -273px
+  }
+
+  .platforms-graphic__icon-overlay {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0)
+  }
+
+  .platforms-graphic__icon-overlay:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 87px;
+    height: 39px;
+    background: url(assets/images/home/cloudcat.png) left top no-repeat;
+    background-size: 100% auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+  }
+
+  .platforms-graphic__icon-overlay.watch:before, .platforms-graphic__icon-overlay.wear:before {
+    width: 43.5px;
+    height: 19.5px
+  }
+
+  .platforms-graphic__icon-overlay.arduino:before {
+    width: 14.5px;
+    height: 6.5px
+  }
+
+  .platforms-graphic__icon-overlay.mac {
+    left: 130px;
+    top: 24px;
+    width: 1033px;
+    height: 176px
+  }
+
+  .platforms-graphic__icon-overlay.mac:before {
+    -webkit-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: translate(-50%, -50%) rotateX(68deg);
+    transform: translate(-50%, -50%) rotateX(68deg)
+  }
+
+  .platforms-graphic__icon-overlay.mini {
+    left: 309px;
+    top: 374px;
+    width: 222px;
+    height: 296px
+  }
+
+  .platforms-graphic__icon-overlay.arduino {
+    left: 629px;
+    top: 393px;
+    width: 35px;
+    height: 39px
+  }
+
+  .platforms-graphic__icon-overlay.watch {
+    left: 754px;
+    top: 374px;
+    width: 54px;
+    height: 68px;
+    border-radius: 4px
+  }
+
+  .platforms-graphic__icon-overlay.wear {
+    left: 850px;
+    top: 368px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%
+  }
+
+  .platforms-graphic__icon-overlay.droid-1 {
+    left: 983px;
+    top: 360px;
+    width: 161px;
+    height: 287px
+  }
+
+  .platforms-graphic__icon-overlay.ipad {
+    left: 607px;
+    top: 574px;
+    width: 283px;
+    height: 382px
+  }
+
+  .platforms-graphic__icon-overlay.iphone {
+    left: 973px;
+    top: 759px;
+    width: 114px;
+    height: 205px
+  }
+
+  .platforms-graphic__icon-overlay.droid-2 {
+    left: 1147px;
+    top: 739px;
+    width: 123px;
+    height: 229px
+  }
+
+  .platforms-graphic__icon-overlay.droid-3 {
+    left: 1333px;
+    top: 745px;
+    width: 118px;
+    height: 210px
+  }
+
+  .platforms-graphic__icon-overlay.droid-4 {
+    left: 1511px;
+    top: 721px;
+    width: 144px;
+    height: 254px
+  }
+}
