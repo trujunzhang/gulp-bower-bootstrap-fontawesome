@@ -11,10 +11,12 @@ $font-family-base: 'Open Sans', sans-serif;
 @import "bootstrap";
 @import "font-awesome";
 
-@import "platforms-graphic";
-@import "platforms-graphic-phone";
-@import "platforms-graphic-desktop";
-@import "home-products";
+//@import "platforms-graphic";
+//@import "platforms-graphic-phone";
+//@import "platforms-graphic-desktop";
+//@import "home-products";
+
+@import "devices";
 
 // Bootstrap Starter Template Styles
 body {
