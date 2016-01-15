@@ -5,12 +5,12 @@
 @import "marginpadding";
 @import "compass/css3/transform";
 
-body{
-    background-color: $background;
+body {
+    background-color:$background;
     font-family: $regular-font;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1, h2, h3, h4, h5, h6 {
     font-family: $regular-font;
 }
 
@@ -18,193 +18,193 @@ h1,h2,h3,h4,h5,h6{
     margin-top: $top-header;
 }
 
-#logo{
-    display: block;
+#logo {
+    display:block;
 }
 
 #slogan {
-    font-size: $slogan;
-    color: $dark-blue;
-    margin-bottom: 20px;
+    font-size:$slogan;
+    color:$dark-blue;
+    margin-bottom:20px;
     display:block;
 }
 
 nav {
     ul {
-        list-style-type: none;
+        list-style-type:none;
         float:right;
     }
-    li{
+    li {
         display:inline;
         float:left;
-        &:last-child a{
-            padding-right: 0;
+        &:last-child a {
+            padding-right:0;
         }
-        &:first-child a{
-            padding-left: 0;
+        &:first-child a {
+            padding-left:0;
         }
     }
-
-    a{
+    a {
         padding: $top-nav-padding;
-        text-transform: uppercase;
+        text-transform:uppercase;
         color:$dark-blue;
-        font-size: $nav-items;
+        font-size:$nav-items;
     }
 }
 
-
 #content {
-    background: url(../images/hero.jpg);
-    background-size: cover;
-    height: 550px;
-    width: 100%;
-    overfloat:visible;
+    background: url(../images/hero.jpg) no-repeat;
+    background-size:cover;
+    height:550px;
+    width:100%;
+    overflow:visible;
 
     .feature {
-        background: $accent;
+        background:$accent;
         color:#fff;
         text-transform:uppercase;
         display:inline-block;
         padding: 0 5px;
         font-size:$feature;
-        margin-top: $feature-padding;
+        margin-top:$feature-padding;
         margin-bottom:0;
     }
 
-    h1{
+    h1 {
         color:#fff;
-        font-size: $h1;
+        font-size:$h1;
         margin-bottom:0;
     }
 
-    .subtext{
+    .subtext {
         color:$light-blue;
         font-size:$subtext;
         margin-bottom:70px;
     }
+
 }
 
-.gallery{
-    .gcontainer{
+.gallery {
+
+    .gcontainer {
         background:$gallery-background;
         padding:$gallery-padding;
         width:230px;
-        margin-bottom: 15px;
+        margin-bottom:15px;
 
-        &:hover{
-            @include transform(scale(1.05))
+        &:hover {
+            @include transform(scale(1.05));
         }
     }
-    .gtitle{
-        color: $dark-blue;
+
+    .gtitle {
+        color:$dark-blue;
         font-size:$article-titles;
-        line-height: $article-titles-1h;
+        line-height:$article-titles-lh;
         margin: $gallery-margin-inner;
         display:block;
     }
 
-    .gsubtext{
+    .gsubtext {
         color:$dark-blue;
         font-size:$article-subtitles;
-        margin:$gallery-margin-inner;
+        margin: $gallery-margin-inner;
     }
 
-    .gsubtext strong{
+    .gsubtext strong {
         color:$accent;
     }
 }
-
 
 .sidebar {
     background-color:$light-blue;
     padding: 12px 15px;
 
-    h2{
-        font-weight : bold;
+    h2 {
+        font-weight:bold;
         text-transform:uppercase;
         font-size:$sidebar-titles;
         display:inline;
         float:left;
     }
 
-    img{
+    img {
         display:inline;
         float:right;
     }
 
-    ul{
+    ul {
         list-style-type:none;
-        clear: both;
+        clear:both;
         margin: 40px 0 0 0;
     }
 
-    a{
-        color: #000;
-        font-size :$forum-title;
+    a {
+        color:#000;
+        font-size:$forum-title;
     }
 
-    a span{
+    a span {
         color:$mid-blue !important;
         text-transform:uppercase;
         margin: -5px 0 12px 0;
         display:block;
         font-size:$forum-auth;
     }
-
 }
 
-@media only screen and (max-width: 64.0625em){
-    #logo, nav{
-        margin:$top-header-mobile
+@media only screen and (max-width: 64.0625em) {
+
+    #logo, nav {
+        margin: $top-header-mobile !important;
     }
 
-    #slogan{
+    #slogan {
         display:none;
     }
 
-    nav{
-        a{
-            font-size:$nav-items-mobile
+    nav {
+        a {
+            font-size: $nav-items-mobile;
         }
     }
 
-    #content{
+    #content {
         padding: 0 20px;
-        
-        h1{
+
+        h1 {
             font-size:$h1-mobile;
             line-height:1em;
-            margin-bottom: 20px;
+            margin-bottom:20px;
         }
 
-        .subtext{
-            font-size : $subtext-mobile;
+        .subtext {
+            font-size:$subtext-mobile;
         }
-        .feature{
-            margin-top:30px;   
+
+        .feature {
+            margin-top:30px;
         }
-        
     }
 
 }
 
-@media only screen and (max-width: 64.0625em){
-     #logo, nav{
-         margin:$top-header-phone;
-     }
+@media only screen and (max-width: 64.0625em) {
 
-     .gcontainer {
-         margin-left: auto;
-         margin-right: auto;
-         left:0;
-         right:0;
-         width: 70%;
+    #logo, nav {
+        margin: $top-header-phone;
+    }
 
-         img{
-             width:100% !important;
-         }
-     }
-     
-   
+    .gcontainer {
+        margin-left: auto;
+        margin-right: auto;
+        left:0;
+        right:0;
+        width: 70%;
+
+        img {
+            width:100% !important;
+        }
+    }
+
 }
