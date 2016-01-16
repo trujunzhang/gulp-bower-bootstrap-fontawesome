@@ -1,0 +1,70 @@
+@import "settings";
+@import "foundation";
+
+@import "marginpadding";
+@import "colors";
+@import "typography";
+
+
+body {
+  background-color:$background;
+  font-family: $regular-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $regular-font;
+}
+
+.home-products{
+  background-color: transparent;
+  height: $home-products-height;
+  overflow:visible;
+
+  #owl-demo {
+    .item{
+      margin: 0px;
+      position: relative;
+      height: $home-products-height;
+
+      img{
+        display: block;
+        width: 100%;
+        height: $home-products-height;
+        position: absolute;
+      }
+
+      .title{
+        position: absolute;
+        margin-left: 200px;
+        padding-top: 200px;
+        color:#fff;
+        text-transform:uppercase;
+        display:inline-block;
+      }
+
+      .feature {
+        background:$accent;
+        color:#fff;
+        text-transform:uppercase;
+        display:inline-block;
+        padding: 0 5px;
+        font-size:$feature;
+        margin-top:$feature-padding;
+        margin-bottom:0;
+
+        z-index: 100;
+        position: absolute;
+      }
+
+    }
+  }
+
+}
+
+
+
+
+
+
+
+

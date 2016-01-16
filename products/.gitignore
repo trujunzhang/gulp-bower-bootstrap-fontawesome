@@ -1,0 +1,11 @@
+/bower_components/*
+/.sass-cache/*
+*.DS_Store
+
+bower_components
+vendor/
+
+stylesheets/
+
+
+assets/*.jpg
