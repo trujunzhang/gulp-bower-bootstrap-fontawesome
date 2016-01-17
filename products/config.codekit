@@ -4394,9 +4394,9 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "blog",
+	"displayValue": "products",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "compass_blue"
+	"iconImageName": "compass_darkGray"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,
