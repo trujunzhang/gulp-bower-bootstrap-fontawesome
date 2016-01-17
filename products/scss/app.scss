@@ -15,7 +15,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .home-bolts{
   .bolts-layout{
+    .intro{
+      position: absolute;
+      float: left;
+    }
 
+    .title{
+      font-family: $regular-font;
+      font-size: 40px;
+      color: #ffffff;
+      letter-spacing: 0.75px;
+      line-height: 27px;
+      margin-top: 60px;
+    }
   }
 }
 
