@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     $("#owl-demo").owlCarousel({
 
-        autoPlay: 5000, //Set AutoPlay to 3 seconds
+        //autoPlay: 5000, //Set AutoPlay to 3 seconds
 
         navigation : false, // Show next and prev buttons
         slideSpeed : 800,
