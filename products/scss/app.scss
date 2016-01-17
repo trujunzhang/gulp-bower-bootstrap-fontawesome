@@ -37,12 +37,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible;
   padding-top: 40px;
 
-  .columnDivider {
-    border-right: 1px solid #DEDEDE;
-    margin-right:-10px; /* size of gutter */
-    padding-right:10px; /* size of gutter */
-  }
-
   .title {
     font-family: $regular-font;
     font-size: 20px;
@@ -71,6 +65,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #000000;
     line-height: 33px;
     margin-top: 50px;
+  }
+
+  .right-panel{
+    border-left: solid 1px #ccc;
   }
 
 }
