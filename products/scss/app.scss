@@ -70,8 +70,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 50px;
   }
 
+  .left-panel{
+    border-right: solid 1px #ccc;
+  }
+
   .right-panel{
-    border-left: solid 1px #ccc;
+
   }
 
 }
