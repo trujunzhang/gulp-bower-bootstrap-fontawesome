@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .title{
+      position: absolute;
       font-family: $regular-font;
       font-size: 40px;
       color: #ffffff;
