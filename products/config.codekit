@@ -282,6 +282,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/realm.benchmarks.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 35347,
+		"inputAbbreviatedPath": "\/assets\/realm.benchmarks.png",
+		"outputAbbreviatedPath": "\/assets\/realm.benchmarks.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/bower.json": {
 		"fileType": 524288,
 		"ignore": 1,
