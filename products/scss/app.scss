@@ -35,7 +35,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .local-database-intro {
-
+    margin: 0 auto;
+    width: 380px;
+    height: 230px;
   }
 
   .online-database-intro {
@@ -43,6 +45,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 24px;
     color: #000000;
     line-height: 33px;
+    margin-top: 50px;
   }
 
 }
