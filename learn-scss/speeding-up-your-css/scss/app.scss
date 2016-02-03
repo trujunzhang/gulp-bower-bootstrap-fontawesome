@@ -6,205 +6,205 @@
 @import "compass/css3/transform";
 
 body {
-    background-color:$background;
-    font-family: $regular-font;
+  background-color: $background;
+  font-family: $regular-font;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $regular-font;
+  font-family: $regular-font;
 }
 
 #logo, nav {
-    margin-top: $top-header;
+  margin-top: $top-header;
 }
 
 #logo {
-    display:block;
+  display: block;
 }
 
 #slogan {
-    font-size:$slogan;
-    color:$dark-blue;
-    margin-bottom:20px;
-    display:block;
+  font-size: $slogan;
+  color: $dark-blue;
+  margin-bottom: 20px;
+  display: block;
 }
 
 nav {
-    ul {
-        list-style-type:none;
-        float:right;
+  ul {
+    list-style-type: none;
+    float: right;
+  }
+  li {
+    display: inline;
+    float: left;
+    &:last-child a {
+      padding-right: 0;
     }
-    li {
-        display:inline;
-        float:left;
-        &:last-child a {
-            padding-right:0;
-        }
-        &:first-child a {
-            padding-left:0;
-        }
+    &:first-child a {
+      padding-left: 0;
     }
-    a {
-        padding: $top-nav-padding;
-        text-transform:uppercase;
-        color:$dark-blue;
-        font-size:$nav-items;
-    }
+  }
+  a {
+    padding: $top-nav-padding;
+    text-transform: uppercase;
+    color: $dark-blue;
+    font-size: $nav-items;
+  }
 }
 
 #content {
-    background: url(../images/hero.jpg) no-repeat;
-    background-size:cover;
-    height:550px;
-    width:100%;
-    overflow:visible;
+  background: url(../images/hero.jpg) no-repeat;
+  background-size: cover;
+  height: 550px;
+  width: 100%;
+  overflow: visible;
 
-    .feature {
-        background:$accent;
-        color:#fff;
-        text-transform:uppercase;
-        display:inline-block;
-        padding: 0 5px;
-        font-size:$feature;
-        margin-top:$feature-padding;
-        margin-bottom:0;
-    }
+  .feature {
+    background: $accent;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0 5px;
+    font-size: $feature;
+    margin-top: $feature-padding;
+    margin-bottom: 0;
+  }
 
-    h1 {
-        color:#fff;
-        font-size:$h1;
-        margin-bottom:0;
-    }
+  h1 {
+    color: #fff;
+    font-size: $h1;
+    margin-bottom: 0;
+  }
 
-    .subtext {
-        color:$light-blue;
-        font-size:$subtext;
-        margin-bottom:70px;
-    }
+  .subtext {
+    color: $light-blue;
+    font-size: $subtext;
+    margin-bottom: 70px;
+  }
 
 }
 
 .gallery {
 
-    .gcontainer {
-        background:$gallery-background;
-        padding:$gallery-padding;
-        width:230px;
-        margin-bottom:15px;
+  .gcontainer {
+    background: $gallery-background;
+    padding: $gallery-padding;
+    width: 230px;
+    margin-bottom: 15px;
 
-        &:hover {
-            @include transform(scale(1.05));
-        }
+    &:hover {
+      @include transform(scale(1.05));
     }
+  }
 
-    .gtitle {
-        color:$dark-blue;
-        font-size:$article-titles;
-        line-height:$article-titles-1h;
-        margin: $gallery-margin-inner;
-        display:block;
-    }
+  .gtitle {
+    color: $dark-blue;
+    font-size: $article-titles;
+    line-height: $article-titles-1h;
+    margin: $gallery-margin-inner;
+    display: block;
+  }
 
-    .gsubtext {
-        color:$dark-blue;
-        font-size:$article-subtitles;
-        margin: $gallery-margin-inner;
-    }
+  .gsubtext {
+    color: $dark-blue;
+    font-size: $article-subtitles;
+    margin: $gallery-margin-inner;
+  }
 
-    .gsubtext strong {
-        color:$accent;
-    }
+  .gsubtext strong {
+    color: $accent;
+  }
 }
 
 .sidebar {
-    background-color:$light-blue;
-    padding: 12px 15px;
+  background-color: $light-blue;
+  padding: 12px 15px;
 
-    h2 {
-        font-weight:bold;
-        text-transform:uppercase;
-        font-size:$sidebar-titles;
-        display:inline;
-        float:left;
+  h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: $sidebar-titles;
+    display: inline;
+    float: left;
+  }
+
+  img {
+    display: inline;
+    float: right;
+  }
+
+  ul {
+    list-style-type: none;
+    clear: both;
+    margin: 40px 0 0 0;
+  }
+
+  a {
+    color: #000;
+    font-size: $forum-title;
+  }
+
+  a span {
+    color: $mid-blue !important;
+    text-transform: uppercase;
+    margin: -5px 0 12px 0;
+    display: block;
+    font-size: $forum-auth;
+  }
+}
+
+@media only screen and (max-width: 64.0625em) {
+
+  #logo, nav {
+    margin: $top-header-mobile !important;
+  }
+
+  #slogan {
+    display: none;
+  }
+
+  nav {
+    a {
+      font-size: $nav-items-mobile;
     }
+  }
+
+  #content {
+    padding: 0 20px;
+
+    h1 {
+      font-size: $h1-mobile;
+      line-height: 1em;
+      margin-bottom: 20px;
+    }
+
+    .subtext {
+      font-size: $subtext-mobile;
+    }
+
+    .feature {
+      margin-top: 30px;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 64.0625em) {
+
+  #logo, nav {
+    margin: $top-header-phone;
+  }
+
+  .gcontainer {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 70%;
 
     img {
-        display:inline;
-        float:right;
+      width: 100% !important;
     }
-
-    ul {
-        list-style-type:none;
-        clear:both;
-        margin: 40px 0 0 0;
-    }
-
-    a {
-        color:#000;
-        font-size:$forum-title;
-    }
-
-    a span {
-        color:$mid-blue !important;
-        text-transform:uppercase;
-        margin: -5px 0 12px 0;
-        display:block;
-        font-size:$forum-auth;
-    }
-}
-
-@media only screen and (max-width: 64.0625em) {
-
-    #logo, nav {
-        margin: $top-header-mobile !important;
-    }
-
-    #slogan {
-        display:none;
-    }
-
-    nav {
-        a {
-            font-size: $nav-items-mobile;
-        }
-    }
-
-    #content {
-        padding: 0 20px;
-
-        h1 {
-            font-size:$h1-mobile;
-            line-height:1em;
-            margin-bottom:20px;
-        }
-
-        .subtext {
-            font-size:$subtext-mobile;
-        }
-
-        .feature {
-            margin-top:30px;
-        }
-    }
-
-}
-
-@media only screen and (max-width: 64.0625em) {
-
-    #logo, nav {
-        margin: $top-header-phone;
-    }
-
-    .gcontainer {
-        margin-left: auto;
-        margin-right: auto;
-        left:0;
-        right:0;
-        width: 70%;
-
-        img {
-            width:100% !important;
-        }
-    }
+  }
 
 }
