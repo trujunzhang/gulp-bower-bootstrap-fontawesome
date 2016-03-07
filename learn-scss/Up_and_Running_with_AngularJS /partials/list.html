@@ -1,7 +1,7 @@
 <section class="artistpage">
     <div class="search">
         <h1>Artist Directory</h1>
-        <label>search:</label>
+        <label>search: </label>
         <input ng-model="query" placeholder="Search for artists" autofocus/>
 
         <label class="formgroup">by:
@@ -12,23 +12,25 @@
         </label>
 
         <label class="formgroup">
-            <input name="direction" type="radio" value="reverse" ng-model="direction"/>
+            <input name="direction" type="radio" ng-model="direction" checked/>
             ascending
         </label>
         <label class="formgroup">
-            <input name="direction" type="radio" value="reverse" ng-model="direction"/>
+            <input name="direction" type="radio" ng-model="direction" value="reverse" />
             descending
         </label>
 
     </div>
 
     <ul class="artistlist">
-        <li class="artist cf" ng-repeat="item in artists">
-            <img alt="Photo of {{item.name}}" ng-src="images/{{item.shortname}}_tn.jpg"/>
-            <div class="info">
-                <h2>{{item.name}}</h2>
-                <h3>{{item.reknown}}</h3>
-            </div>
+        <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy:artistOrder:direction">
+            <a href="#/details/{{artists.indexOf(item)}}">
+                <img alt="Photo of {{item.name}}" ng-src="images/{{item.shortname}}_tn.jpg"/>
+                <div class="info">
+                    <h2>{{item.name}}</h2>
+                    <h3>{{item.reknown}}</h3>
+                </div>
+            </a>
         </li>
     </ul>
 
