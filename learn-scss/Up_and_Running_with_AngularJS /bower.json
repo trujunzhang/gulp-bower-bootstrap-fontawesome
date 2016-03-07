@@ -1,0 +1,26 @@
+{
+  "name": "Up and Running with AngularJS",
+  "authors": [
+    "Trujun Zhang <trujunzhang@gmail.com>"
+  ],
+  "description": "Up and Running with AngularJS",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "angularjs"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.0",
+    "angular": "angularjs#^1.5.0"
+  }
+}
