@@ -4,7 +4,7 @@ var myApp = angular.module('myApp', [
 ]);
 
 myApp.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/list', {
+    $routeProvider.when('/List', {
         templateUrl: 'partials/list.html',
         controller: 'ListController'
     }).otherwise({
