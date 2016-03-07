@@ -1,17 +1,17 @@
 <section class="artistpage">
     <div class="search">
         <h1>Artist Directory</h1>
-        <label for="">search:</label>
+        <label>search:</label>
         <input name="" type="text" value="" ng-model="query" placeholder="Search for artists"/>
 
-        <label class="formgroup" for="">by:
-            <select id="" name="" ng-model="artistOrder">
+        <label class="formgroup">by:
+            <select ng-model="artistOrder">
                 <option value="name">Name</option>
                 <option value="reknown">Reknown</option>
             </select>
         </label>
 
-        <label class="formgroup" for="">
+        <label class="formgroup">
             <input name="direction" type="radio" value="reverse" ng-model="direction"/>
             ascending
         </label>
@@ -26,7 +26,7 @@
                 <h3>{{item.reknown}}</h3>
             </div>
         </li>
-    </ul>    
+    </ul>
 
 
 </section>
