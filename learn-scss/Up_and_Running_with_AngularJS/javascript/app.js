@@ -23,6 +23,6 @@
             .otherwise({
                 redirectTo: '/List'
             });
-    };
+    }
 
 })();
