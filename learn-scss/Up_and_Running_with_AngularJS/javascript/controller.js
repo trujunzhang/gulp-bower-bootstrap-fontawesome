@@ -2,8 +2,8 @@
     'use strict';
 
     angular
-        .module('myApp', [])
-        .controller('MyController', MyController);
+        .module('artistControllers', [])
+        .controller('ListController', MyController);
 
     MyController.$inject = ['$scope', '$http'];
 
@@ -19,10 +19,9 @@
         function activate() {
             $http.get('js/data.json').success(function (data) {
                 $scope.artists = data;
-                $scope.artistOrder = 'name'
+                $scope.artistOrder = 'name';
             });
         }
-
     }
 
 })();
