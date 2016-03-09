@@ -5,9 +5,9 @@
     .module('firebaseApp')
     .service('MessageService', MessageService);
 
-  MessageService.$inject = ['$http','FBURL','$q'];
+  MessageService.$inject = ['$http','FBURL','$q', '$firebase'];
 
-  function MessageService($http,FBURL,$q){
+  function MessageService($http,FBURL,$q, $firebase){
 
     /*jshint validthis: true */
     var svc = this;
