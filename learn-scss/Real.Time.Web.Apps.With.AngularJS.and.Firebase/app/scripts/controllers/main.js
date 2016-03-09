@@ -31,7 +31,9 @@ function MainCtrl($scope) {
   };
 
   $scope.updateMessage = function () {
-
+    childRef.update({
+      text: 'wanghao'
+    });
   }
 
 }
