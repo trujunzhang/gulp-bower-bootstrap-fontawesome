@@ -25,7 +25,7 @@ function MainCtrl($scope,$timeout) {
 
   childRef.on('value', function(snapshoot){
     $timeout(function(){
-      console.log(snapshoot.hasChildren());
+      console.log(snapshoot.numChildren());
       var snapshootValue = snapshoot.val();
       $scope.message = snapshootValue;
     });
