@@ -22,12 +22,10 @@ function MainCtrl($scope, $timeout, MessageService) {
   ////////////////////////////
 
   function activate() {
-    MessageService.childAdded(20,function(addedChild){
+    MessageService.childAdded(2,function(addedChild){
       $timeout(function () {
         $scope.messages.push(addedChild);
       });
-      //console.log("child added from MessageService: ");
-      //console.log(addedChild);
     });
   }
 
@@ -45,6 +43,13 @@ function MainCtrl($scope, $timeout, MessageService) {
 
   $scope.turnFeedOff = function(){
     MessageService.off();
+  };
+
+  $scope.pageNext = function(){
+    var lastItem = $scope.messages[$scope.messages.length -1];
+    MessageService.pageNext(lastItem.name,2).then(function(messages){
+      console.log(messages);
+    });
   };
 
 }

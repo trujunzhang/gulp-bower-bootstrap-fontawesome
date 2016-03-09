@@ -5,9 +5,9 @@
     .module('firebaseApp')
     .service('MessageService', MessageService);
 
-  MessageService.$inject = ['$http','FBURL'];
+  MessageService.$inject = ['$http','FBURL','$q'];
 
-  function MessageService($http,FBURL){
+  function MessageService($http,FBURL,$q){
 
     /*jshint validthis: true */
     var svc = this;
@@ -35,18 +35,23 @@
 
 
     var pageNext = function(name, numberOfItems){
-      vardefered = $q.defer();
+      var deferred = $q.defer();
       var messages = [];
 
-      messagesRef.startAt(null, name).once('value', function(snapshot){
-
+      messagesRef.startAt(null, name).limit(numberOfItems).once('value', function(snapshot){
+        snapshot.forEach(function(snapItem){
+          var itemVal = snapItem.val();
+          itemVal.name = snapItem.name();
+          messages.push(itemVal);
+        });
+        deferred.resolve(messages);
       });
-
+      return deferred.promise;
     };
 
-      var pageBack = function(name, numberOfItems){
+    var pageBack = function(name, numberOfItems){
 
-      };
+    };
 
     return {
       childAdded: childAdded,
