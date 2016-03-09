@@ -32,8 +32,18 @@
       });
     };
 
+    var addMessage = function(message){
+      messagesRef.push(message);
+    };
+
+    var turnMessageOff = function(){
+      messagesRef.off();
+    };
+
     return {
-      childAdded: childAdded
+      childAdded: childAdded,
+      add: addMessage,
+      off: turnMessageOff
     };
   }
 
