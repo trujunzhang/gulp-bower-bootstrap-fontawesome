@@ -13,9 +13,9 @@ var firebaseApp = angular.module('firebaseApp');
 
 firebaseApp.controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$scope','$timeout'];
+MainCtrl.$inject = ['$scope', '$timeout'];
 
-function MainCtrl($scope,$timeout) {
+function MainCtrl($scope, $timeout) {
   var rootRef = new Firebase("https://resplendent-torch-212.firebaseio.com");
   var messagesRef = rootRef.child('messages');
 
@@ -26,15 +26,15 @@ function MainCtrl($scope,$timeout) {
   $scope.currentUser = null;
   $scope.currentText = null;
 
-  messagesRef.on('value', function(snapshoot){
-    $timeout(function(){
+  messagesRef.on('value', function (snapshoot) {
+    $timeout(function () {
       console.log(snapshoot.numChildren());
       var snapshootValue = snapshoot.val();
       $scope.messages = snapshootValue;
     });
   });
 
-  $scope.sendMessage = function() {
+  $scope.sendMessage = function () {
     var newMessage = {
       user: $scope.currentUser,
       text: $scope.currentText
