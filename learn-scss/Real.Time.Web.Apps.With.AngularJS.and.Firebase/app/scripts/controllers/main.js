@@ -23,6 +23,19 @@ function MainCtrl($scope) {
   /*jshint validthis: true */
   var vm = this;
 
+  childRef.on('value', function(snapshoot){
+    var snapshootValue = snapshoot.val();
+    console.log(snapshootValue);
+    $scope.message = snapshootValue;
+  });
+
+  $scope.$watch('message.text',function(newValue){
+    // console.log(newValue);
+    childRef.update({
+      text: newValue
+    });
+  });
+
   $scope.setMessage = function () {
     childRef.set({
       user: 'bob',
@@ -34,6 +47,10 @@ function MainCtrl($scope) {
     childRef.update({
       text: 'wanghao'
     });
-  }
+  };
+
+  $scope.deleteMessage = function () {
+    childRef.remove();
+  };
 
 }
