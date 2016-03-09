@@ -30,4 +30,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .constant('FBURL','https://resplendent-torch-212.firebaseio.com');
