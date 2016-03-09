@@ -1,11 +1,11 @@
-(function(angular) {
+(function() {
   'use strict';
 
   angular
     .module('firebaseApp')
     .service('MessageService', MessageService);
 
-  MessageService.$inject = ['$http'];
+  MessageService.$inject = ['$http','FBURL'];
 
   function MessageService($http,FBURL){
 
@@ -37,4 +37,4 @@
     };
   }
 
-})(window.angular);
+})();

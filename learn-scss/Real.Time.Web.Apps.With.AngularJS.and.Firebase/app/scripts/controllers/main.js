@@ -13,7 +13,7 @@ var firebaseApp = angular.module('firebaseApp');
 
 firebaseApp.controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$scope', '$timeout'];
+MainCtrl.$inject = ['$scope', '$timeout', 'MessageService'];
 
 function MainCtrl($scope, $timeout, MessageService) {
   var rootRef = new Firebase("https://resplendent-torch-212.firebaseio.com");
