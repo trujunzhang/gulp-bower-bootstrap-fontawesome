@@ -25,13 +25,15 @@ function MainCtrl($scope, $timeout) {
 
   $scope.currentUser = null;
   $scope.currentText = null;
+  $scope.messages = [];
 
-  messagesRef.on('value', function (snapshoot) {
+  messagesRef.on('child_added', function (snapshoot) {
     $timeout(function () {
       //console.log(snapshoot.numChildren());
       var snapshootValue = snapshoot.val();
       console.log(snapshootValue);
-      $scope.messages = snapshootValue;
+      //$scope.messages = snapshootValue;
+      $scope.messages.push(snapshootValue);
     });
   });
 
