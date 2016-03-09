@@ -52,4 +52,11 @@ function MainCtrl($scope, $timeout, MessageService) {
     });
   };
 
+  $scope.pageBack = function(){
+    var firstItem = $scope.messages[0];
+    MessageService.pageBack(firstItem.name,2).then(function(messages){
+      $scope.messages = messages;
+    });
+  };
+
 }

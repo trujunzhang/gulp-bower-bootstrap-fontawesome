@@ -50,7 +50,18 @@
     };
 
     var pageBack = function(name, numberOfItems){
+      var deferred = $q.defer();
+      var messages = [];
 
+      messagesRef.endAt(null, name).limit(numberOfItems).once('value', function(snapshot){
+        snapshot.forEach(function(snapItem){
+          var itemVal = snapItem.val();
+          itemVal.name = snapItem.name();
+          messages.push(itemVal);
+        });
+        deferred.resolve(messages);
+      });
+      return deferred.promise;
     };
 
     return {
