@@ -17,11 +17,14 @@ MainCtrl.$inject = ['$scope'];
 
 function MainCtrl($scope) {
     var rootRef = new Firebase("https://resplendent-torch-212.firebaseio.com");
-    var childRef = rootRef.child('messages');
+    var childRef = rootRef.child('message');
     var parentRef = childRef.parent();
 
+    /*jshint validthis: true */
+    var vm = this;  
+  
     $scope.setMessage = function () {
-        rootRef.child('message').set({
+        childRef.set({
             user: 'bob',
             text: 'djzhang'
         });
