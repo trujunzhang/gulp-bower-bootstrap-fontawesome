@@ -19,14 +19,21 @@
 
     }
 
-    var messageRef = new Firebase(FBURL);
+    var messagesRef = new Firebase(FBURL).child('messages');
 
-    var childAdded = function(){
-      
+    var childAdded = function(cb){
+      messagesRef.on('child_added', function(snapshot){
+        var val = snapshot.val();
+        cb.call(this, {
+          user: val.user,
+          text: val.text,
+          name: snapshot.name()
+        });
+      });
     };
-    
+
     return {
-      childAdded: childAdded()
+      childAdded: childAdded
     };
   }
 

@@ -15,7 +15,7 @@ firebaseApp.controller('MainCtrl', MainCtrl);
 
 MainCtrl.$inject = ['$scope', '$timeout'];
 
-function MainCtrl($scope, $timeout) {
+function MainCtrl($scope, $timeout, MessageService) {
   var rootRef = new Firebase("https://resplendent-torch-212.firebaseio.com");
   var messagesRef = rootRef.child('messages');
   var titleRef = rootRef.child('title');
@@ -32,9 +32,13 @@ function MainCtrl($scope, $timeout) {
     $scope.title = snapshoot.val();
   });
 
+  MessageService.childAdded(function(addedChild){
+    console.log("child added from MessageService: ");
+    console.log(addedChild);
+  });
+
   messagesRef.on('child_added', function (snapshoot) {
     $timeout(function () {
-      //console.log(snapshoot.numChildren());
       var snapshootValue = snapshoot.val();
       console.log("child added:");
       console.log(snapshootValue);
