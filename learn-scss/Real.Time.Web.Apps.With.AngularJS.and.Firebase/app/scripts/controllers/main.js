@@ -16,18 +16,22 @@ firebaseApp.controller('MainCtrl', MainCtrl);
 MainCtrl.$inject = ['$scope'];
 
 function MainCtrl($scope) {
-    var rootRef = new Firebase("https://resplendent-torch-212.firebaseio.com");
-    var childRef = rootRef.child('message');
-    var parentRef = childRef.parent();
+  var rootRef = new Firebase("https://resplendent-torch-212.firebaseio.com");
+  var childRef = rootRef.child('message');
+  var parentRef = childRef.parent();
 
-    /*jshint validthis: true */
-    var vm = this;  
-  
-    $scope.setMessage = function () {
-        childRef.set({
-            user: 'bob',
-            text: 'djzhang'
-        });
-    }
+  /*jshint validthis: true */
+  var vm = this;
+
+  $scope.setMessage = function () {
+    childRef.set({
+      user: 'bob',
+      text: 'djzhang'
+    });
+  };
+
+  $scope.updateMessage = function () {
+
+  }
 
 }
