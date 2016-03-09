@@ -12,17 +12,10 @@
     /*jshint validthis: true */
     var svc = this;
 
-    svc.getIndex = getIndex;
-    ////////////////////////////
-
-    function getIndex(){
-
-    }
-
     var messagesRef = new Firebase(FBURL).child('messages');
 
-    var childAdded = function(cb){
-      messagesRef.on('child_added', function(snapshot){
+    var childAdded = function(limitNum,cb){
+      messagesRef.startAt().limit(limitNum).on('child_added', function(snapshot){
         var val = snapshot.val();
         cb.call(this, {
           user: val.user,
@@ -40,10 +33,27 @@
       messagesRef.off();
     };
 
+
+    var pageNext = function(name, numberOfItems){
+      vardefered = $q.defer();
+      var messages = [];
+
+      messagesRef.startAt(null, name).once('value', function(snapshot){
+
+      });
+
+    };
+
+      var pageBack = function(name, numberOfItems){
+
+      };
+
     return {
       childAdded: childAdded,
       add: addMessage,
-      off: turnMessageOff
+      off: turnMessageOff,
+      pageNext: pageNext,
+      pageBack: pageBack
     };
   }
 

@@ -22,7 +22,7 @@ function MainCtrl($scope, $timeout, MessageService) {
   ////////////////////////////
 
   function activate() {
-    MessageService.childAdded(function(addedChild){
+    MessageService.childAdded(20,function(addedChild){
       $timeout(function () {
         $scope.messages.push(addedChild);
       });
@@ -40,7 +40,6 @@ function MainCtrl($scope, $timeout, MessageService) {
       user: $scope.currentUser,
       text: $scope.currentText
     };
-
     MessageService.add(newMessage);
   };
 
