@@ -28,8 +28,9 @@ function MainCtrl($scope, $timeout) {
 
   messagesRef.on('value', function (snapshoot) {
     $timeout(function () {
-      console.log(snapshoot.numChildren());
+      //console.log(snapshoot.numChildren());
       var snapshootValue = snapshoot.val();
+      console.log(snapshootValue);
       $scope.messages = snapshootValue;
     });
   });
