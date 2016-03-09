@@ -23,6 +23,9 @@ function MainCtrl($scope,$timeout) {
   /*jshint validthis: true */
   var vm = this;
 
+  $scope.currentUser = null;
+  $scope.currentText = null;
+
   messagesRef.on('value', function(snapshoot){
     $timeout(function(){
       console.log(snapshoot.numChildren());
@@ -30,5 +33,14 @@ function MainCtrl($scope,$timeout) {
       $scope.messages = snapshootValue;
     });
   });
+
+  $scope.sendMessage = function() {
+    var newMessage = {
+      user: $scope.currentUser,
+      text: $scope.currentText
+    };
+
+    messagesRef.push(newMessage);
+  };
 
 }
