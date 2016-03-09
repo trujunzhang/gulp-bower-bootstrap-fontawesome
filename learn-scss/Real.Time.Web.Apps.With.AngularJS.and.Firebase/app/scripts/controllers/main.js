@@ -48,7 +48,7 @@ function MainCtrl($scope, $timeout, MessageService) {
   $scope.pageNext = function(){
     var lastItem = $scope.messages[$scope.messages.length -1];
     MessageService.pageNext(lastItem.name,2).then(function(messages){
-      console.log(messages);
+      $scope.messages = messages;
     });
   };
 
