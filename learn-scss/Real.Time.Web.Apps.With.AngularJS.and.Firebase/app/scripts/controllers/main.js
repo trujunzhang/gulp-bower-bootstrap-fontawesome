@@ -31,11 +31,58 @@ function MainCtrl($scope, $timeout) {
     $timeout(function () {
       //console.log(snapshoot.numChildren());
       var snapshootValue = snapshoot.val();
+      console.log("child added:");
       console.log(snapshootValue);
       //$scope.messages = snapshootValue;
-      $scope.messages.push(snapshootValue);
+      //$scope.messages.push(snapshootValue);
+      $scope.messages.push({
+        text: snapshootValue.text,
+        user: snapshootValue.user,
+        name: snapshoot.name()
+      });
     });
   });
+
+  messagesRef.on('child_changed', function(snapshoot){
+    $timeout(function(){
+      var snapshotVal = snapshoot.val();
+      //console.log(snapshotVal);
+      var message = findMessageByName(snapshoot.name());
+      console.log("child_changed");
+      console.log(message);
+      message.text = snapshotVal.text;
+    });
+  });
+
+  messagesRef.on('child_removed', function(snapshoot){
+    $timeout(function(){
+      deleteMessageByName(snapshoot.name());
+    });
+  });
+
+  function deleteMessageByName(name){
+    for(var i=0; i< $scope.messages.length; i++){
+      var currenMessage = $scope.messages[i];
+      if(currenMessage.name == name){
+        $scope.messages.splice(i,1);
+        break;
+      }
+    }
+  }
+
+
+  function findMessageByName(name){
+    var messageFound = null;
+    for(var i=0; i< $scope.messages.length; i++){
+      var currenMessage = $scope.messages[i];
+      if(currenMessage.name == name){
+        messageFound = currenMessage;
+        break;
+      }
+    }
+
+    return messageFound;
+  }
 
   $scope.sendMessage = function () {
     var newMessage = {
