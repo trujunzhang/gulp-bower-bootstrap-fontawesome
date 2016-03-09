@@ -17,41 +17,18 @@ MainCtrl.$inject = ['$scope','$timeout'];
 
 function MainCtrl($scope,$timeout) {
   var rootRef = new Firebase("https://resplendent-torch-212.firebaseio.com");
-  var childRef = rootRef.child('message');
-  var parentRef = childRef.parent();
+  var messagesRef = rootRef.child('messages');
+
 
   /*jshint validthis: true */
   var vm = this;
 
-  childRef.on('value', function(snapshoot){
+  messagesRef.on('value', function(snapshoot){
     $timeout(function(){
       console.log(snapshoot.numChildren());
       var snapshootValue = snapshoot.val();
-      $scope.message = snapshootValue;
+      $scope.messages = snapshootValue;
     });
   });
-
-  $scope.$watch('message.text',function(newValue){
-    childRef.update({
-      text: newValue
-    });
-  });
-
-  $scope.setMessage = function () {
-    childRef.set({
-      user: 'bob',
-      text: 'djzhang'
-    });
-  };
-
-  $scope.updateMessage = function () {
-    childRef.update({
-      text: 'wanghao'
-    });
-  };
-
-  $scope.deleteMessage = function () {
-    childRef.remove();
-  };
 
 }
