@@ -18,14 +18,19 @@ MainCtrl.$inject = ['$scope', '$timeout'];
 function MainCtrl($scope, $timeout) {
   var rootRef = new Firebase("https://resplendent-torch-212.firebaseio.com");
   var messagesRef = rootRef.child('messages');
-
+  var titleRef = rootRef.child('title');
 
   /*jshint validthis: true */
   var vm = this;
 
+  $scope.title = null;
   $scope.currentUser = null;
   $scope.currentText = null;
   $scope.messages = [];
+
+  titleRef.once('value', function(snapshoot){
+    $scope.title = snapshoot.val();
+  });
 
   messagesRef.on('child_added', function (snapshoot) {
     $timeout(function () {
@@ -91,6 +96,10 @@ function MainCtrl($scope, $timeout) {
     };
 
     messagesRef.push(newMessage);
+  };
+
+  $scope.turnFeedOff = function(){
+    messagesRef.off();
   };
 
 }
