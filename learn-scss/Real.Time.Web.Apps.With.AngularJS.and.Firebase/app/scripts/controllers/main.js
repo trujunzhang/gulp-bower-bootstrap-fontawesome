@@ -23,6 +23,20 @@ function MainCtrl($scope, $timeout, MessageService) {
   /*jshint validthis: true */
   var vm = this;
 
+  activate();
+
+  ////////////////////////////
+
+  function activate() {
+
+    MessageService.childAdded(function(addedChild){
+      console.log("child added from MessageService: ");
+      console.log(addedChild);
+    });
+
+
+  }
+
   $scope.title = null;
   $scope.currentUser = null;
   $scope.currentText = null;
@@ -30,11 +44,6 @@ function MainCtrl($scope, $timeout, MessageService) {
 
   titleRef.once('value', function(snapshoot){
     $scope.title = snapshoot.val();
-  });
-
-  MessageService.childAdded(function(addedChild){
-    console.log("child added from MessageService: ");
-    console.log(addedChild);
   });
 
   messagesRef.on('child_added', function (snapshoot) {
