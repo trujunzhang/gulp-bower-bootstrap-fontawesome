@@ -5,14 +5,15 @@
     .module('firebaseApp')
     .service('MessageService', MessageService);
 
-  MessageService.$inject = ['$http','FBURL','$q', '$firebase'];
+  MessageService.$inject = ['$http','FBURL','$q', '$firebaseObject'];
 
-  function MessageService($http,FBURL,$q, $firebase){
+  function MessageService($http,FBURL,$q, $firebaseObject){
 
     /*jshint validthis: true */
     var svc = this;
 
     var messagesRef = new Firebase(FBURL).child('messages');
+    var fireMessage = $firebaseObject(messagesRef);
 
     var childAdded = function(limitNum,cb){
       messagesRef.startAt().limit(limitNum).on('child_added', function(snapshot){
@@ -26,7 +27,7 @@
     };
 
     var addMessage = function(message){
-      messagesRef.push(message);
+      return fireMessage.$add(message);
     };
 
     var turnMessageOff = function(){

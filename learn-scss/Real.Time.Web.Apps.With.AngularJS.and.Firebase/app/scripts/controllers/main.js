@@ -38,7 +38,11 @@ function MainCtrl($scope, $timeout, MessageService) {
       user: $scope.currentUser,
       text: $scope.currentText
     };
-    MessageService.add(newMessage);
+
+    var promise = MessageService.add(newMessage);
+    promise.then(function(name){
+      console.log(name);
+    });
   };
 
   $scope.turnFeedOff = function(){
