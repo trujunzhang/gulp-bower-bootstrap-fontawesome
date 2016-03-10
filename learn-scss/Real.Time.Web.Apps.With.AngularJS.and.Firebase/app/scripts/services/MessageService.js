@@ -18,26 +18,13 @@
     var childAdded = function (cb) {
       fireMessage.$watch(function (event) {
         if (event.event == 'child_added') {
-          var key = event.key;
-          var rec = fireMessage.$getRecord(key);
-          console.log("child_added: array's length, " + fireMessage.length + " key: " + key);
+          var rec = fireMessage.$getRecord(event.key);
           cb.call(this, {
             user: rec.user,
             text: rec.text,
-            name: key
+            name: event.key
           });
         }
-      });
-    };
-
-    var childAddedxx = function (cb) {
-      fireMessage.$watch('child_added', function (data) {
-        var val = data.snapshot.value;
-        cb.call(this, {
-          user: val.user,
-          text: val.text,
-          name: data.snapshot.name
-        });
       });
     };
 
@@ -46,7 +33,7 @@
     };
 
     var turnMessageOff = function () {
-      messagesRef.off();
+      fireMessage.$off();
     };
 
 
