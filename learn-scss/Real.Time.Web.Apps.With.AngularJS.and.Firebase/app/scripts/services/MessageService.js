@@ -5,14 +5,14 @@
     .module('firebaseApp')
     .service('MessageService', MessageService);
 
-  MessageService.$inject = ['$http', 'FBURL', '$q', '$firebaseArray'];
+  MessageService.$inject = ['$http', 'MSGURL','FBURL', '$q', '$firebaseArray'];
 
-  function MessageService($http, FBURL, $q, $firebaseArray) {
+  function MessageService($http, MSGURL, FBURL, $q, $firebaseArray) {
 
     /*jshint validthis: true */
     var svc = this;
 
-    var messagesRef = new Firebase(FBURL).child('messages');
+    var messagesRef = new Firebase(MSGURL).startAt().limit(2);
     var fireMessage = $firebaseArray(messagesRef);
 
     var childAdded = function (cb) {
@@ -40,13 +40,14 @@
     var pageNext = function (name, numberOfItems) {
       var deferred = $q.defer();
       var messages = [];
-
-      messagesRef.startAt(null, name).limit(numberOfItems).once('value', function (snapshot) {
-        snapshot.forEach(function (snapItem) {
-          var itemVal = snapItem.val();
-          itemVal.name = snapItem.name();
-          messages.push(itemVal);
-        });
+      var pageMessageRef= new Firebase(MSGURL).startAt(null, name).limit(numberOfItems);
+      $firebaseArray(pageMessageRef).$loaded(function (data) {
+        console.log(data);
+        // snapshot.forEach(function (snapItem) {
+        //   var itemVal = snapItem.val();
+        //   itemVal.name = snapItem.name();
+        //   messages.push(itemVal);
+        // });
         deferred.resolve(messages);
       });
       return deferred.promise;

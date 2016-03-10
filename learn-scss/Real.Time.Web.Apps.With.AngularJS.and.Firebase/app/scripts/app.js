@@ -32,4 +32,5 @@ angular
         redirectTo: '/'
       });
   })
-  .constant('FBURL','https://resplendent-torch-212.firebaseio.com');
+  .constant('FBURL','https://resplendent-torch-212.firebaseio.com')
+  .constant('MSGURL','https://resplendent-torch-212.firebaseio.com/messages');
