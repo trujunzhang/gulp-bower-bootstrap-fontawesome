@@ -42,12 +42,10 @@
       var messages = [];
       var pageMessageRef= new Firebase(MSGURL).startAt(null, name).limit(numberOfItems);
       $firebaseArray(pageMessageRef).$loaded(function (data) {
-        console.log(data);
-        // snapshot.forEach(function (snapItem) {
-        //   var itemVal = snapItem.val();
-        //   itemVal.name = snapItem.name();
-        //   messages.push(itemVal);
-        // });
+        data.forEach(function(item){
+          item.name = item.$id;
+          messages.push(item);
+        });
         deferred.resolve(messages);
       });
       return deferred.promise;
