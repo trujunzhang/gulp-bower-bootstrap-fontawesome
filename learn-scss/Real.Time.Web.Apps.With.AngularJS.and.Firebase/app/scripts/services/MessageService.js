@@ -54,12 +54,11 @@
     var pageBack = function (name, numberOfItems) {
       var deferred = $q.defer();
       var messages = [];
-
-      messagesRef.endAt(null, name).limit(numberOfItems).once('value', function (snapshot) {
-        snapshot.forEach(function (snapItem) {
-          var itemVal = snapItem.val();
-          itemVal.name = snapItem.name();
-          messages.push(itemVal);
+      var pageMessageRef= new Firebase(MSGURL).endAt(null, name).limit(numberOfItems);
+      $firebaseArray(pageMessageRef).$loaded(function (data) {
+        data.forEach(function(item){
+          item.name = item.$id;
+          messages.push(item);
         });
         deferred.resolve(messages);
       });
