@@ -5,9 +5,9 @@
     .module('firebaseApp')
     .controller('RegisterCtrl',RegisterCtrl);
 
-  RegisterCtrl.$inject = ['$scope','$firebaseAuth', 'FBURL'];
+  RegisterCtrl.$inject = ['$scope','$window','$firebaseAuth', 'FBURL'];
 
-  function RegisterCtrl($scope,$firebaseAuth,FBURL){
+  function RegisterCtrl($scope,$window,$firebaseAuth,FBURL){
 
     /*jshint validthis: true */
     var vm = this;
@@ -44,9 +44,10 @@
 
       $scope.simpleLogin.$createUser(authUser).then(function(userData) {
         console.log("User " + userData.uid + " created successfully!");
-        return $scope.authObj.$authWithPassword(authUser);
+        return $scope.simpleLogin.$authWithPassword(authUser);
       }).then(function(authData) {
         console.log("Logged in as:", authData.uid);
+        $window.location.href = '/#/home';
       }).catch(function(error) {
         console.error("Error: ", error);
       });
