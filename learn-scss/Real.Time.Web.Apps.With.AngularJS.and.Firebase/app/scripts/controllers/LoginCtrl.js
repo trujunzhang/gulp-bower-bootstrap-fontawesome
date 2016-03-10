@@ -5,9 +5,9 @@
     .module('firebaseApp')
     .controller('LoginCtrl',LoginCtrl);
 
-    LoginCtrl.$inject = ['$scope'];
+  LoginCtrl.$inject = ['$scope','$window','$firebaseAuth', 'FBURL'];
 
-  function LoginCtrl($scope){
+  function LoginCtrl($scope,$window,$firebaseAuth,FBURL){
 
     /*jshint validthis: true */
     var vm = this;
@@ -17,6 +17,37 @@
     ////////////////////////////
 
     function activate(){
+
+    };
+
+    var fbRef = new Firebase(FBURL);
+    $scope.simpleLogin = $firebaseAuth(fbRef);
+    $scope.errors =[];
+
+    $scope.user = {
+      email: '',
+      password: ''
+    };
+
+    $scope.login = function(){
+      var errors = [],
+          user = $scope.user,
+          authUser = {
+            email: user.email,
+            password:user.password
+          };
+
+      if(user.email == ''){
+        errors.push('Please enter an email');
+      }
+      if(user.password == ''){
+        errors.push('Please enter an password');
+      }
+      if(errors.length > 0){
+        $scope.errors = errors;
+        return;
+      }
+
 
     };
 

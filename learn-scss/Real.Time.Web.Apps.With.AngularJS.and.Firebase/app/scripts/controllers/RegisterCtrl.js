@@ -31,7 +31,7 @@
       if(user.email == ''){
         errors.push('Please enter an email');
       }
-      if(user.password == ""){
+      if(user.password == ''){
         errors.push('Passwordd must not be blank');
       }
       else if(user.password != user.confirmPassword){
