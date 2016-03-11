@@ -38,6 +38,10 @@
           password: user.password
         };
 
+      if (user.email == undefined) {
+
+        errors.push('Please enter a valid email');
+      }
       if (user.email == '') {
         errors.push('Please enter an email');
       }
