@@ -52,7 +52,7 @@
         return;
       }
 
-      var isLoggedIn = $scope.simpleLogin.$getAuth();
+      var authedUser = $scope.simpleLogin.$getAuth();
 
       $scope.simpleLogin.$authWithPassword(authUser).then(function (authData) {
         console.log("Logged in as:", authData.uid);
