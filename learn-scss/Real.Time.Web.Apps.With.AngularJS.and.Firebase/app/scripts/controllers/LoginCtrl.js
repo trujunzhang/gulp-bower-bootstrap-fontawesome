@@ -52,6 +52,8 @@
         return;
       }
 
+      var isLoggedIn = $scope.simpleLogin.$getAuth();
+
       $scope.simpleLogin.$authWithPassword(authUser).then(function (authData) {
         console.log("Logged in as:", authData.uid);
         $rootScope.user = authUser;
@@ -63,6 +65,10 @@
         if (error.code == 'INVALID_EMAIL') {
           $scope.errors.push('The email was invalid');
         }
+        if (error.code == 'INVALID_USER') {
+          $scope.errors.push('User not found');
+        }
+
         console.error("Error: ", error);
       });
     };
