@@ -5,7 +5,7 @@
     .module('firebaseApp')
     .controller('LoginCtrl', LoginCtrl);
 
-  LoginCtrl.$inject = ['$inject', '$rootScope', '$window', '$firebaseAuth', 'FBURL'];
+  LoginCtrl.$inject = ['$scope', '$rootScope', '$window', '$firebaseAuth', 'FBURL'];
 
   function LoginCtrl($scope, $rootScope, $window, $firebaseAuth, FBURL) {
 
