@@ -5,9 +5,9 @@
     .module('firebaseApp')
     .controller('LoginCtrl', LoginCtrl);
 
-  LoginCtrl.$inject = ['$scope', '$window', '$firebaseAuth', 'FBURL'];
+  LoginCtrl.$inject = ['$inject', '$rootScope', '$window', '$firebaseAuth', 'FBURL'];
 
-  function LoginCtrl($scope, $window, $firebaseAuth, FBURL) {
+  function LoginCtrl($scope, $rootScope, $window, $firebaseAuth, FBURL) {
 
     /*jshint validthis: true */
     var vm = this;
@@ -39,7 +39,6 @@
         };
 
       if (user.email == undefined) {
-
         errors.push('Please enter a valid email');
       }
       if (user.email == '') {
@@ -53,8 +52,19 @@
         return;
       }
 
-      var x = 0;
-
+      $scope.simpleLogin.$authWithPassword(authUser).then(function (authData) {
+        console.log("Logged in as:", authData.uid);
+        $rootScope.user = authUser;
+        $window.location.href = '/#/main';
+      }).catch(function (error) {
+        if (error.code == 'EMAIL_TAKEN') {
+          $scope.errors.push('Email already registered');
+        }
+        if (error.code == 'INVALID_EMAIL') {
+          $scope.errors.push('The email was invalid');
+        }
+        console.error("Error: ", error);
+      });
     };
 
   }
