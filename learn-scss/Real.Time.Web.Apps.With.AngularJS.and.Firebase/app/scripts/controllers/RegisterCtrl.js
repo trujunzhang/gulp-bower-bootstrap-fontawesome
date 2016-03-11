@@ -21,6 +21,7 @@
     };
 
     $scope.register = function(){
+      $scope.errors =[];
       var errors = [],
           user = $scope.registerUser,
           authUser = {
@@ -47,8 +48,15 @@
         return $scope.simpleLogin.$authWithPassword(authUser);
       }).then(function(authData) {
         console.log("Logged in as:", authData.uid);
-        $window.location.href = '/#/home';
+        $rootScope.user = authUser;
+        $window.location.href = '/#/main';
       }).catch(function(error) {
+        if(error.code == 'EMAIL_TAKEN'){
+          $scope.errors.push('Email already registered');
+        }
+        if(error.code == 'INVALID_EMAIL'){
+          $scope.errors.push('The email was invalid');
+        }
         console.error("Error: ", error);
       });
     };

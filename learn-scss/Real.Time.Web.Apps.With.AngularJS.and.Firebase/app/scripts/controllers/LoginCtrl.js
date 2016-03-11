@@ -24,14 +24,15 @@
     $scope.simpleLogin = $firebaseAuth(fbRef);
     $scope.errors =[];
 
-    $scope.user = {
+    $scope.loginUser = {
       email: '',
       password: ''
     };
 
     $scope.login = function(){
+      $scope.errors =[];
       var errors = [],
-          user = $scope.user,
+          user = $scope.loginUser,
           authUser = {
             email: user.email,
             password:user.password
